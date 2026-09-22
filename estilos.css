@@ -1,0 +1,157 @@
+/* Estilo general del cuerpo */
+body {
+
+background: #ffc09c;
+background: radial-gradient(circle, rgba(255, 192, 156, 1) 0%, rgba(252, 111, 234, 0.42) 100%);
+
+    font-family : ’ Nunito ’ , sans-serif ;
+ margin : 0;
+ padding : 0;
+ box-sizing : border-box ;
+ }
+
+ /* Cabecera */
+ .cabecera {
+ display : flex ; /* Convierte el contenedor en
+,→ flexible */
+justify-content : space-between ; /* Separa logo y menú */
+ align-items : center ; /* Centra verticalmente */
+ background-color : rgba(216, 98, 43, 0.452);
+ padding : 10px 30px ; 
+ }
+
+ /* Logo */
+ .logo {
+ height : 160px ; /* Altura fija */
+ width : auto ; /* Ancho proporcional */
+ }
+
+ /* Lista del menú */
+.menu {
+ list-style: none ; /* Quita los puntos de la lista */
+ display: flex ; /* Coloca los items en fila */
+ gap: 25px ; /* Espacio entre botones */
+ margin : 0;
+ padding : 0;
+
+ }
+
+ /* Enlaces del menú */
+ .menu a {
+ text-decoration : none ; /* Quita el subrayado */
+ color : white ;
+ font-weight : 700; /* Negrita */
+ font-size : 18px ;
+ padding : 8px 12px ;
+ border-radius : 6px ;
+ transition : background 0.3 s ease ;
+ }
+
+ .menu a:hover {
+ background-color : #df963d; /* Fondo naranja al pasar el,→ ratón */
+ }
+
+  /* 1. Contenedor principal del carrusel */
+.carrusel {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* 2. Oculta los radio buttons */
+.carrusel input[type="radio"] {
+    display: none;
+}
+
+/* 3. Ventana visible del carrusel */
+.carrusel-contenedor {
+    width: 100%;
+    overflow: hidden; /* Oculta lo que sobresale */
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Banda que contiene todas las imágenes */
+.diapositivas {
+    display: flex;
+    width: 300%; /* 3 imágenes => 300% */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* 5. Cada imagen ocupa un tercio del contenedor */
+.diapositivas img {
+    width: 33.333%;
+    height: 400px;
+    object-fit: cover; /* Ajusta la imagen sin deformar */
+}
+
+/* 6. Controles de navegación (puntos) */
+.navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.navegacion label {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.navegacion label:hover {
+    background-color: #FF8C00;
+}
+
+/* 7. Desplazamiento según el radio seleccionado */
+#diapo1:checked ~ .carrusel-contenedor .diapositivas {
+    transform: translateX(0);
+}
+#diapo2:checked ~ .carrusel-contenedor .diapositivas {
+    transform: translateX(-33.333%);
+}
+#diapo3:checked ~ .carrusel-contenedor .diapositivas {
+    transform: translateX(-66.666%);
+}
+
+/* 8. Cambia el color del punto activo */
+#diapo1:checked ~ .navegacion label[for="diapo1"],
+#diapo2:checked ~ .navegacion label[for="diapo2"],
+#diapo3:checked ~ .navegacion label[for="diapo3"] {
+    background-color: #0066CC;
+}
+/* Pie de página */
+.pie-pagina {
+    background-color: #333;
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    font-size: 16px;
+}
+
+.redes-sociales a {
+    color: #e89fd3;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: white;
+}
+
+.datos-sitio {
+    text-align: right;
+}
+
+.datos-sitio p {
+    margin: 5px 0;
+}
